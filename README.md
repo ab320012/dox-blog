@@ -22,7 +22,7 @@ Run `bundle exec rspec`
 * The tests included are very basic, better tests are encouraged particularly for logic you added.
 * Please refrain from including unnecessary gems or spending time on CSS.
 * Avoid pushing indentation changes to current files, this makes the changeset harder to read.
-* The use any kind of JavaScript front-end enhacements is 100% optional, feel free to add if you'd like to show your skills. This should NOT be where you spend most of your time. One idea: in place search result suggestions.
+* The use of any kind of JavaScript front-end enhacements is 100% optional, feel free to add if you'd like to show your skills. This should NOT be where you spend most of your time. One idea: in place search result suggestions.
 * Once completed, email a link to your Pull Request to jobs@doximity.com
 
 
@@ -62,6 +62,6 @@ have a havier relevancy weight.
 
 ## What to Expect after you Submit
 
-Our team will be notified and we'll review the submission within 2 days.We'll check for complexity, test coverage, and adherednce to style. We're looking for clean, easy to read, maintainable code. Good test coverage, and performance considerations are a plus as well.
+Our team will be notified and we'll review the submission within 2 days. We'll check for complexity, test coverage, and adherence to style. We're looking for clean, easy to read, maintainable code. Good test coverage, and performance considerations are a plus as well.
 
 We know your time is valuable and appreciate you taking the time to complete this assignment.
