@@ -19,7 +19,13 @@ class Article < ActiveRecord::Base
     where("lower(title) like ? or lower(body) like ?", "%#{term.downcase}%", "%#{term.downcase}%")
   }
   scope :order_by_relevance, -> (ids) {
-    order("field(id, #{ids.reverse.join(',')}) desc")
+    if ids.empty?
+      none
+    else
+      order("field(id, #{ids.reverse.join(',')}) desc")
+    end
   }
-
+  def author
+    super || NullAuthor.new
+  end
 end

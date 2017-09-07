@@ -39,7 +39,7 @@
         | Search Articles
         = form_for "", url: 'articles', method: 'get' do |form|
           p
-            = form.text_field :title
+            = form.text_field :search
             = form.submit :search
 
           div.load.hide

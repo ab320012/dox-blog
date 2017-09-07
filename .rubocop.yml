@@ -168,7 +168,7 @@ Style/DefWithParentheses:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#method-parens'
   Enabled: false
 
-Style/PreferredHashMethods:
+Style/DeprecatedHashMethods:
   Description: 'Checks for use of deprecated Hash methods.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#hash-key'
   Enabled: false
@@ -356,7 +356,7 @@ Style/LineEndConcatenation:
                  line end.
   Enabled: false
 
-Style/MethodCallWithoutArgsParentheses:
+Style/MethodCallParentheses:
   Description: 'Do not use parentheses for method calls with no arguments.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-args-no-parens'
   Enabled: false
@@ -575,7 +575,7 @@ Style/SingleLineMethods:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-single-line-methods'
   Enabled: false
 
-Layout/SingleSpaceBeforeFirstArg:
+Style/SingleSpaceBeforeFirstArg:
   Description: >-
                  Checks that exactly one space is used between a method name
                  and the first argument for method calls without parentheses.
@@ -590,8 +590,8 @@ Style/SpaceAfterComma:
   Description: 'Use spaces after commas.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#spaces-operators'
   Enabled: false
-  
-Layout/SpaceAroundKeyword:
+
+Style/SpaceAfterControlKeyword:
   Description: 'Use spaces after if/elsif/unless/while/until/case/when.'
   Enabled: false
 
@@ -656,7 +656,9 @@ Style/SpaceAroundOperators:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#spaces-operators'
   Enabled: false
 
-
+Style/SpaceBeforeModifierKeyword:
+  Description: 'Put a space before the modifier keyword.'
+  Enabled: false
 
 Style/SpaceInsideBrackets:
   Description: 'No spaces after [ or before ].'
@@ -722,7 +724,7 @@ Style/TrailingBlankLines:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#newline-eof'
   Enabled: false
 
-Style/TrailingCommaLiteral:
+Style/TrailingComma:
   Description: 'Checks for trailing comma in parameter lists and literals.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas'
   Enabled: false
@@ -1122,6 +1124,10 @@ Rails/Date:
   Description: >-
                   Checks the correct usage of date aware methods,
                   such as Date.today, Date.current etc.
+  Enabled: false
+
+Rails/DefaultScope:
+  Description: 'Checks if the argument passed to default_scope is a block.'
   Enabled: false
 
 Rails/Delegate:
