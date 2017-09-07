@@ -37,7 +37,7 @@
     .col-1-4
       .search
         | Search Articles
-        = form_for "", url: '#' do |form|
+        = form_for "", url: 'articles', method: 'get' do |form|
           p
             = form.text_field :title
             = form.submit :search
