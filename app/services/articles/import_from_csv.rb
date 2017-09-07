@@ -10,7 +10,7 @@ class Articles::ImportFromCSV
       a= Article.find_or_initialize_by(
         title: data['title'],
         body: JSON.parse(data['body']).join('. '),
-        author: Author.find_or_create_by(name: data['author_name']),
+        author: Author.find_or_create_by(name: data['author name']),
         hero_image_name: data['hero image name']
       )
       puts a.errors unless a.save

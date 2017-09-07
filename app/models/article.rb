@@ -8,7 +8,7 @@ class Article < ActiveRecord::Base
     if term.nil?
       self
     else
-      search(term).order_by_relevance(
+      search(term).order_by_ids(
         Articles::OrderByTermRelevance.new(term, self).call.map(&:id)
       )
     end
@@ -18,14 +18,9 @@ class Article < ActiveRecord::Base
   scope :search, -> (term) {
     where("lower(title) like ? or lower(body) like ?", "%#{term.downcase}%", "%#{term.downcase}%")
   }
-  scope :order_by_relevance, -> (ids) {
-    if ids.empty?
-      none
-    else
-      order("field(id, #{ids.reverse.join(',')}) desc")
-    end
-  }
+  scope :order_by_ids, -> (ids) { ids.empty? ? none : order("field(id, #{ids.reverse.join(',')}) desc"); }
   def author
     super || NullAuthor.new
   end
+
 end
