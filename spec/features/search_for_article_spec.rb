@@ -18,6 +18,16 @@ describe 'article search', :type => :feature, js: true do
       expect(ArticleRelevance.new('match', @articles[0]).score > ArticleRelevance.new('match', @articles[1]).score).to be true
     end
   end
+  context '#search' do
+    it 'searches like against body' do
+      create(:article, body: 'bbbb')
+      expect(Article.search('bb')).to include(Article.find_by(body: 'bbbb'))
+    end
+    it 'searches like against title' do
+      create(:article, title: 'aaaa')
+      expect(Article.search('aa')).to include(Article.find_by(title: 'aaaa'))
+    end
+  end
   context 'Articles::OrderByTermRelevance' do
     it 'sorts articles in proper order' do
       create(:article, title: 'a', body: 'b')
