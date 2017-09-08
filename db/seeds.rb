@@ -32,3 +32,5 @@ Page.where(
 
 HeroImage.where(name: "airplane.jpg").first_or_create
 HeroImage.where(name: "beach.jpg").first_or_create
+
+Articles::ImportFromCSV.new.call
